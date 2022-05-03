@@ -42,7 +42,7 @@ This is an example of the GloVe embedding of the word “stick” (with an embed
 -  Step3: use both word embeddings and LM embeddings in the sequence tagging model
 
 ## ELMo
-![model overview](/Knowledge_Based/pictures/ELMo.gif)
+![model overview](/pictures/ELMo.gif)
 -  Unlike traditional word embeddings such as word2vec and GLoVe, the ELMo vector assigned to a token or word is actually a function of the entire sentence containing that word. Therefore, the same word can have different word vectors under different contexts.
 -  ELMo gained its language understanding from being trained to predict the next word in a sequence of words - a task called Language Modeling. 
 -  ELMo's secrete is to train a bi-directional LSTM and concatenate hidden layers followed by weighted summation.
@@ -54,13 +54,13 @@ This is an example of the GloVe embedding of the word “stick” (with an embed
 While ELMo was able to overcome many of the shortcomings of previous word embeddings architectures, it difficult to learn longer sequences of text such as sentences or paragraphs and also makes it slower to train. However, the transformer architecture allows inputs to be processed simultaneously. It was mentioned in a paper [Attention is all you need](https://arxiv.org/abs/1706.03762).
 
 A high-level look:
-![high level look](/Knowledge_Based/pictures/transformer_high_level_look.png)
+![high level look](/pictures/transformer_high_level_look.png)
 - Encoders: the encoding component is a stack of encoders, all identical in structure.
 - Decoders: the decoding component is a stack of decoders of the same number, has both those layers, but between them is an attention layer that helps the decoder focus on relevant parts of the input sentence.
 ![high level look](/Knowledge_Based/pictures/transformer_encoder_decoder.png)
 
 A Detailed look:
-![high level look](/Knowledge_Based/pictures/transformer_detailed_encoder_decoder.png)
+![high level look](/pictures/transformer_detailed_encoder_decoder.png)
 - Encoders: 
     - turn each input word into a vector using an embedding algorithm
     - add positional encoding, which helps it determine the position of each word, or the distance between different words in the sequence
@@ -70,10 +70,10 @@ A Detailed look:
 - Decoders:
     - the self-attention layer is only allowed to attend to earlier positions in the output sequence, which is done by masking future positions (setting them to -inf) before the softmax step in the self-attention calculation
     - the “Encoder-Decoder Attention” layer works just like multiheaded self-attention, except it creates its Queries matrix from the layer below it, and takes the Keys and Values matrix from the output of the encoder stack
-![decoder look](/Knowledge_Based/pictures/transformer_decoder.gif)
+![decoder look](/pictures/transformer_decoder.gif)
 - Linear and Softmax Layer
 
-![decoder look](/Knowledge_Based/pictures/transformer_decoder_output_softmax.png)
+![decoder look](/pictures/transformer_decoder_output_softmax.png)
 
 1. Illustrated Transformer: http://jalammar.github.io/illustrated-transformer/
 
@@ -113,7 +113,7 @@ Next Sentence Prediction
 
 Difference
 
-![model overview](/Knowledge_Based/pictures/BERT_ELMo.png)
+![model overview](/pictures/BERT_ELMo.png)
 
 1. https://towardsdatascience.com/bert-explained-state-of-the-art-language-model-for-nlp-f8b21a9b6270
 2. https://medium.com/swlh/a-simple-guide-on-using-bert-for-text-classification-bbf041ac8d04
@@ -121,7 +121,7 @@ Difference
 4. [movie setiment analysis](https://github.com/google-research/bert/blob/master/predicting_movie_reviews_with_bert_on_tf_hub.ipynb)
 
 ## Comparison among NLP models
-![model overview](/Knowledge_Based/pictures/comparison_among_NLP_model.png)
+![model overview](/pictures/comparison_among_NLP_model.png)
 
 # Neural NLP Architectures
 ## MNL
